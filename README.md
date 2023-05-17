@@ -5,7 +5,7 @@ Accepts text buffers on its sink pad, does text-to-speech using Coqui, and produ
 Example usage:
 
 ```
-gst-launch-1.0 --quiet fdsrc ! 'text/x-raw,format=utf8' ! coquitts ! autoaudiosink
+gst-launch-1.0 --quiet fdsrc ! 'text/x-raw,format=utf8' ! coquitts model=tts_models/en/ljspeech/fast_pitch ! autoaudiosink
 ```
 
 ## License
