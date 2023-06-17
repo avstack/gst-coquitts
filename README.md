@@ -11,7 +11,8 @@ cargo install cargo-c
 
 git clone https://github.com/avstack/gst-coquitts
 cd gst-coquitts
-cargo cinstall
+cargo cbuild --release
+export GST_PLUGIN_PATH=$(pwd)/target/release
 ```
 
 ## Example usage
