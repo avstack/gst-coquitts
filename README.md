@@ -2,7 +2,21 @@
 
 Accepts text buffers on its sink pad, does text-to-speech using Coqui, and produces audio buffers on its source pad.
 
-Example usage:
+## Installation
+
+gst-coquitts is written in Rust and uses the cargo-c helper. Set up a Rust development environment (e.g. using [rustup](https://rustup.rs)) and then:
+
+```
+cargo install cargo-c
+
+git clone https://github.com/avstack/gst-coquitts
+cd gst-coquitts
+cargo cinstall
+```
+
+## Example usage
+
+The Coqui TTS python module must be installed. It's recommended to use a Python virtual environment. You can list possible models with Coqui's `tts --list_models` command.
 
 ```
 gst-launch-1.0 --quiet fdsrc ! 'text/x-raw,format=utf8' ! coquitts model=tts_models/en/ljspeech/fast_pitch ! autoaudiosink
